@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
+</head>
+<body>
+
+<div class="container">
+    <h1>Diabetes Prediction System</h1>
+
+    {% if prediction %}
+    {% if "Positive" in prediction %}
+        <div class="result result-positive">
+            {{ prediction }}
+        </div>
+    {% else %}
+        <div class="result result-negative">
+            {{ prediction }}
+        </div>
+    {% endif %}
+{% endif %}
+
+
+    <form action="/predict" method="POST" class="grid-form">
+
+        <div>
+            <label>Age</label>
+            <input type="number" name="Age" required>
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <select name="Gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Polyuria</label>
+            <select name="Polyuria">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Polydipsia</label>
+            <select name="Polydipsia">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Sudden Weight Loss</label>
+            <select name="sudden weight loss">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Weakness</label>
+            <select name="weakness">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Polyphagia</label>
+            <select name="Polyphagia">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Genital Thrush</label>
+            <select name="Genital thrush">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Visual Blurring</label>
+            <select name="visual blurring">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Itching</label>
+            <select name="Itching">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Irritability</label>
+            <select name="Irritability">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Delayed Healing</label>
+            <select name="delayed healing">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Partial Paresis</label>
+            <select name="partial paresis">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Muscle Stiffness</label>
+            <select name="muscle stiffness">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Alopecia</label>
+            <select name="Alopecia">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Obesity</label>
+            <select name="Obesity">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn">Predict</button>
+    </form>
+</div>
+
+</body>
+</html>
